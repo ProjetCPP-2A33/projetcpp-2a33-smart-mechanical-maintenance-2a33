@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-#include "mainwindow.h"
+#include "gestionV.h"
 #include <QApplication>
 #include <QDebug>
 #include <QMessageBox>
@@ -26,10 +25,4 @@ int main(int argc, char *argv[])
     }
 
     return a.exec();
-=======
-#include <iostream>
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
->>>>>>> origin/GestionVehicules
 }
