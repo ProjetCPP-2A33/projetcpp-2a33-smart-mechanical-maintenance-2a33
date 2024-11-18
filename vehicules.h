@@ -1,48 +1,77 @@
 #ifndef VEHICULES_H
 #define VEHICULES_H
 
+#include "rendezvous.h"
 #include <QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+#include <QSqlTableModel>
 
 
 
 class Vehicules
 {
-    int num_matricule ;
-    QString marque, modele,kilometrages;
-    int annee_fab,id_prop;
-    QString  etat, assurance;
-    QString Type_rend,Status_rend;
-    int date_rend;
+
+private:
+
+    QString num_matricule ;
+    QString marque;
+    QString  modele;
+    QString kilometrages;
+    int annee_fab;
+    int id_client;
+    QString  etat;
+    QString  assurance;
 
 
-    public:
+    Rendezvous rendezvous;
+
+ public:
+
     //constructeurs
+
     Vehicules();
-    Vehicules(int num_matricule, QString marque, QString modele, QString kilometrages, int annee_fab, int id_prop, QString etat, QString assurance);
+    Vehicules(QString num_matricule, QString marque, QString modele, QString kilometrages, int annee_fab, int id_client, QString etat, QString assurance);
 
     //getters
-    int getNum_matricule()  {return num_matricule ;}
+
+    QString getNum_matricule()  {return num_matricule ;}
     QString getMarque () {return marque; }
     QString getModele () {return modele; }
     QString getKilometrages () {return kilometrages; }
     int getAnnee_fab (){return annee_fab ;}
-    int getId_prop () {return id_prop;}
+    int getId_client () {return id_client;}
     QString getEtat () {return etat; }
     QString getAssurance () {return assurance; }
-    QString getType_rend () {return Type_rend; }
-    QString getStatus_rend () {return Status_rend; }
-    int getDate_rend () {return date_rend;}
+    Rendezvous getRendezvous() const;
+
+    //Setters
+
+    void setNum_matricule(QString nm)  {num_matricule = nm;}
+    void setMarque (QString m) { marque = m; }
+    void setModele (QString md) { modele = md; }
+    void setKilometrages (QString k) { kilometrages = k; }
+    void setAnnee_fab (int af){ annee_fab =af ;}
+    void setId_client (int idc) { id_client = idc;}
+    void setEtat (QString e) { etat = e; }
+    void setAssurance (QString a) { assurance= a; }
 
 
 
 
     //Fonctionnalités de base relative à l'entité
-    bool ajouter();
-    bool supprimer(int num_matricule);
+    bool ajouter(const QString &num_matricule, const QString &marque, const QString &modele,
+                 const QString &kilometrages, int annee_fab, int id_client,
+                 const QString &etat, const QString &assurance);
+    bool supprimer(const QString& num_matricule);
     bool modifier();
     QSqlQueryModel* afficher();
+    QSqlQueryModel* rechercher(const QString &num_matricule);
+    QSqlQueryModel* rechercherParmatricule(const QString &num_matricule);
+    QSqlQueryModel* trierParModele();
+    void exporterPDF(const QString &nomFichier, QAbstractItemModel *model);
+    QMap<QString, int> getBrandStatistics();
+    static void showAlert(const QString &title, const QString &message);
 
 
 };
