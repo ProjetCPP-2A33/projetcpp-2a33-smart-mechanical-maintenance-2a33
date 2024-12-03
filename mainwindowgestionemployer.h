@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef MAINWINDOWGESTIONEMPLOYER_H
+#define MAINWINDOWGESTIONEMPLOYER_H
 #include <QMainWindow>
 #include "employer.h"
 #include "qlabel.h"
@@ -55,4 +55,4 @@ private:
     QLineEdit *dateInput;
     QSerialPort *serial;
 };
-#endif // MAINWINDOW_H
+#endif // MAINWINDOWGESTIONEMPLOYER_H

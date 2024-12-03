@@ -1,6 +1,6 @@
-#include "mainwindow.h"
+#include "mainwindowgestionemployer.h"
 #include"employer.h"
-#include "ui_mainwindow.h"
+#include "ui_mainwindowgestionemployer.h"
 #include <QMessageBox>
 #include <QSqlQueryModel>
 #include <QFileDialog>
@@ -19,7 +19,7 @@
 #include <QInputDialog>
 #include <QCryptographicHash>
 #include <QVBoxLayout>
-#include "arduino.h"
+#include "arduinogestionemployer.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent) ,ui(new Ui::MainWindow)
@@ -374,24 +374,23 @@ void MainWindow::onGestionEmployerClicked()
 }
 void MainWindow::on_verifier_clicked()
 {
-    QString inputDate = ui->dateInput->text();
+    QString inputmatricule = ui->matriculeInput->text();
 
-    if (inputDate.isEmpty()) {
-        QMessageBox::warning(this, "Entrée manquante", "Veuillez saisir une date.");
+    if (inputmatricule.isEmpty()) {
+        QMessageBox::warning(this, "Entrée manquante", "Veuillez saisir une matricule.");
         return;
     }
 
-    // Préparer la requête SQL pour vérifier les rendez-vous pour la date saisie
+
     QSqlQuery query;
-    query.prepare("SELECT rendez_vous, status FROM vehicule WHERE rendez_vous = :date");
-    query.bindValue(":date", inputDate);
+    query.prepare("SELECT rendez_vous, status FROM vehicule WHERE matricule = :matricule");
+    query.bindValue(":matricule", inputmatricule);
 
     if (!query.exec()) {
         qDebug() << "Erreur de requête SQL : " << query.lastError().text();
         return;
     }
 
-    // Si la date existe dans la base de données
     if (query.next()) {
         QString date_rendezvous = query.value(0).toString();
         QString status = query.value(1).toString();
@@ -407,10 +406,10 @@ void MainWindow::on_verifier_clicked()
             qDebug() << "Le port série n'est pas prêt.";
         }
     } else {
-        // Si la date n'existe pas, envoyer un message à l'Arduino
-        QString message = "Aucun rendez-vous pour la date: " + inputDate + "\n";
+        // Si la matricule n'existe pas, envoyer un message à l'Arduino
+        QString message = "Aucun rendez-vous pour la matricule: " + inputmatricule + "\n";
         if (serial->isOpen() && serial->isWritable()) {
-            qDebug() << "Aucun rendez-vous trouvé pour cette date.";
+            qDebug() << "Aucun rendez-vous trouvé pour cette matricule.";
             serial->write(message.toUtf8());
         }
     }

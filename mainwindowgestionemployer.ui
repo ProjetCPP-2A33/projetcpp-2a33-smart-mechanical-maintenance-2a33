@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="acceuil">
      <attribute name="title">
@@ -764,7 +764,7 @@ background-color: rgb(147, 154, 255);</string>
        <string>verifier</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="dateInput">
+     <widget class="QLineEdit" name="matriculeInput">
       <property name="geometry">
        <rect>
         <x>520</x>

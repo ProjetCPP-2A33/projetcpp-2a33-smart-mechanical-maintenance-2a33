@@ -1,4 +1,4 @@
-#include "arduino.h"
+#include "arduinogestionemployer.h"
 #include <QDebug>
 
 Arduino::Arduino(QObject *parent) : QObject(parent), serial(new QSerialPort(this)) {}

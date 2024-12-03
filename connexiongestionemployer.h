@@ -1,5 +1,5 @@
-#ifndef CONNEXION_H
-#define CONNEXION_H
+#ifndef CONNEXIONGESTIONEMPLOYER_H
+#define CONNEXIONGESTIONEMPLOYER_H
 #include <QSqlDatabase>
 #include <QDebug>
 
@@ -11,4 +11,4 @@ public:
     void closeConnexion();
 };
 
-#endif // CONNEXION_H
+#endif // CONNEXIONGESTIONEMPLOYER_H
