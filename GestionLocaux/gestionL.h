@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QSqlQueryModel>
 #include "tableviewwindow.h"
-#include "arduino.h"
+#include "arduinogestionL.h"
 
 namespace Ui {
     class GestionL;  // Changer MainWindow en GestionL ici

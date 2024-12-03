@@ -28,19 +28,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    arduinogestionL.cpp \
     gestionL.cpp \
     graphview.cpp \
-    arduino.cpp\
     local.cpp \
         main.cpp \
     connection.cpp \
     tableviewwindow.cpp
 
 HEADERS += \
+    arduinogestionL.h \
     gestionL.h \
     graphview.h \
     local.h \
-        arduino.h\
     connection.h \
     tableviewwindow.h
 

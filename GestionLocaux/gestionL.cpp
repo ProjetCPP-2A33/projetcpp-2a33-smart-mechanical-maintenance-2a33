@@ -9,6 +9,7 @@
 #include <QTimer>
 #include <QSqlQuery>
 #include <QSqlError>
+#include"arduinogestionL.h"
 
 GestionL::GestionL(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::GestionL) {  // Changer MainWindow en GestionL ici

@@ -17,7 +17,7 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="Tabs">
+   <widget class="QTabWidget" name="gLTabs">
     <property name="geometry">
      <rect>
       <x>-10</x>
@@ -41,14 +41,14 @@
     <property name="tabBarAutoHide">
      <bool>false</bool>
     </property>
-    <widget class="QWidget" name="Tab1">
+    <widget class="QWidget" name="gLTab1">
      <attribute name="title">
       <string>Locale info</string>
      </attribute>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="gLlabel">
       <property name="geometry">
        <rect>
-        <x>-10</x>
+        <x>30</x>
         <y>-10</y>
         <width>1171</width>
         <height>631</height>
@@ -70,7 +70,7 @@
        <pixmap resource="images.qrc">:/img/Untitled.png</pixmap>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="gLlabel_2">
       <property name="geometry">
        <rect>
         <x>410</x>
@@ -97,7 +97,7 @@
        <string>Gestion de locaux</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="gLlabel_3">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -115,7 +115,7 @@
        <string>-Adresse :</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="gLlabel_4">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -133,7 +133,7 @@
        <string>-Responsable :</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="gLlabel_5">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -151,7 +151,7 @@
        <string>-Numero télephone :</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="gLlabel_6">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -169,7 +169,7 @@
        <string>-Email :</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="gLlabel_7">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -191,7 +191,7 @@
        <string>ID Locale :</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="gLlabel_8">
       <property name="geometry">
        <rect>
         <x>650</x>
@@ -209,7 +209,7 @@
        <string>-Heure d'ouverture :</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="gLlabel_9">
       <property name="geometry">
        <rect>
         <x>650</x>
@@ -261,7 +261,7 @@ background-color: rgb(255, 255, 255);</string>
        <string>modifier</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_14">
+     <widget class="QLabel" name="gLlabel_14">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -277,7 +277,7 @@ background-color: rgb(255, 255, 255);</string>
        <pixmap>../../Downloads/output-onlinepngtools (1).png</pixmap>
       </property>
      </widget>
-     <widget class="QLabel" name="label_17">
+     <widget class="QLabel" name="gLlabel_17">
       <property name="geometry">
        <rect>
         <x>740</x>
@@ -293,7 +293,7 @@ background-color: rgb(255, 255, 255);</string>
        <pixmap resource="images.qrc">:/img/461764196_1062489365880787_1649872201096511266_n-removebg-preview.png</pixmap>
       </property>
      </widget>
-     <widget class="QLabel" name="label_19">
+     <widget class="QLabel" name="gLlabel_19">
       <property name="geometry">
        <rect>
         <x>740</x>
@@ -448,7 +448,7 @@ background-color: rgb(255, 255, 255);</string>
 background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_22">
+     <widget class="QLabel" name="gLlabel_22">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -481,7 +481,7 @@ border:none;</string>
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_10">
+     <widget class="QLabel" name="gLlabel_10">
       <property name="geometry">
        <rect>
         <x>850</x>
@@ -517,20 +517,20 @@ border:none;</string>
        <string>update °C</string>
       </property>
      </widget>
-     <zorder>label</zorder>
-     <zorder>label_17</zorder>
-     <zorder>label_19</zorder>
-     <zorder>label_2</zorder>
-     <zorder>label_3</zorder>
-     <zorder>label_4</zorder>
-     <zorder>label_5</zorder>
-     <zorder>label_6</zorder>
-     <zorder>label_7</zorder>
-     <zorder>label_8</zorder>
-     <zorder>label_9</zorder>
+     <zorder>gLlabel</zorder>
+     <zorder>gLlabel_17</zorder>
+     <zorder>gLlabel_19</zorder>
+     <zorder>gLlabel_2</zorder>
+     <zorder>gLlabel_3</zorder>
+     <zorder>gLlabel_4</zorder>
+     <zorder>gLlabel_5</zorder>
+     <zorder>gLlabel_6</zorder>
+     <zorder>gLlabel_7</zorder>
+     <zorder>gLlabel_8</zorder>
+     <zorder>gLlabel_9</zorder>
      <zorder>gLpushbutton_afficher</zorder>
      <zorder>gLpushbutton_modifier</zorder>
-     <zorder>label_14</zorder>
+     <zorder>gLlabel_14</zorder>
      <zorder>gLlineEdit_idlocal</zorder>
      <zorder>gLlineEdit_adresse</zorder>
      <zorder>gLlineEdit_Responsable</zorder>
@@ -541,9 +541,9 @@ border:none;</string>
      <zorder>gLpushbutton_ajouter</zorder>
      <zorder>gLpushButton_aff</zorder>
      <zorder>gLcomboBox_Service</zorder>
-     <zorder>label_22</zorder>
+     <zorder>gLlabel_22</zorder>
      <zorder>gLpushButton_showGraph</zorder>
-     <zorder>label_10</zorder>
+     <zorder>gLlabel_10</zorder>
      <zorder>gLlineEdit_temperature</zorder>
      <zorder>gLpushButton_updateTemperature</zorder>
     </widget>
