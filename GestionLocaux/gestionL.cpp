@@ -10,14 +10,19 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include"arduinogestionL.h"
+#include "ui_noteManagement.h"
+
 
 GestionL::GestionL(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::GestionL) {  // Changer MainWindow en GestionL ici
     ui->setupUi(this);
 
+
     // Timer pour vérifier la température toutes les 1 seconde
     QTimer *timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &GestionL::checkTemperature);  // Changer MainWindow en GestionL ici
+    connect(timer, &QTimer::timeout, this, &GestionL::checkTemperature);
+
+    // Changer MainWindow en GestionL ici
     timer->start(1000); // Vérifier la température toutes les 1 seconde
     arduino.connect_arduino();
 
@@ -244,3 +249,11 @@ void GestionL::on_gLpushButton_updateTemperature_clicked() {
         QMessageBox::critical(this, "Erreur", "La mise à jour a échoué : " + query.lastError().text());
     }
 }
+// gestionL.cpp
+
+void GestionL::on_gLpushButton_note_clicked() {
+    // Ouvrir la fenêtre des notes
+    noteWindow = new NoteWindow(this);
+    noteWindow->exec();
+}
+

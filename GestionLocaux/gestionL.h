@@ -5,6 +5,9 @@
 #include <QSqlQueryModel>
 #include "tableviewwindow.h"
 #include "arduinogestionL.h"
+#include "NoteWindow.h"
+
+
 
 namespace Ui {
     class GestionL;  // Changer MainWindow en GestionL ici
@@ -26,13 +29,16 @@ private slots:
     void on_gLpushButton_showGraph_clicked();
     void checkTemperature();
     void on_gLpushButton_updateTemperature_clicked();
+    void on_gLpushButton_note_clicked();
+
+
 
 private:
     Ui::GestionL *ui;  // Changer MainWindow en GestionL ici
     QSqlQueryModel *model;
     TableViewWindow *tableViewWindow;
     Arduino arduino;
-
+  NoteWindow *noteWindow;
     bool isValidId(const QString &idText);
 };
 

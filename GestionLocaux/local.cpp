@@ -2,6 +2,7 @@
 #include <QtSql/QSqlQueryModel>
 #include <QtSql/QSqlQuery>
 #include <QLocale>
+#include <QSqlError>
 
 Local::Local() {
     ID_local = 0;
@@ -55,14 +56,34 @@ bool Local::modifier() {
 
     return query.exec();
 }
-
 bool Local::supprimer() {
+    QSqlDatabase db = QSqlDatabase::database();
+    db.transaction();  // Start a transaction to ensure atomic operation
+
     QSqlQuery query;
+
+    // First, delete associated notes
+    query.prepare("DELETE FROM Notes WHERE ID_local = :ID_local");
+    query.bindValue(":ID_local", ID_local);
+    if (!query.exec()) {
+        qDebug() << "Erreur lors de la suppression des notes: " << query.lastError().text();
+        db.rollback();  // Rollback transaction if this fails
+        return false;
+    }
+
+    // Then, delete the local entry
     query.prepare("DELETE FROM Local WHERE ID_local = :ID_local");
     query.bindValue(":ID_local", ID_local);
+    if (!query.exec()) {
+        qDebug() << "Erreur lors de la suppression du local: " << query.lastError().text();
+        db.rollback();  // Rollback transaction if this fails
+        return false;
+    }
 
-    return query.exec();
+    db.commit();  // Commit transaction if both deletions succeed
+    return true;
 }
+
 
 QSqlQueryModel* Local::afficher() {
     QSqlQueryModel* model = new QSqlQueryModel();

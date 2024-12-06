@@ -28,6 +28,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    NoteWindow.cpp \
     arduinogestionL.cpp \
     gestionL.cpp \
     graphview.cpp \
@@ -37,6 +38,7 @@ SOURCES += \
     tableviewwindow.cpp
 
 HEADERS += \
+    NoteWindow.h \
     arduinogestionL.h \
     gestionL.h \
     graphview.h \
@@ -45,6 +47,7 @@ HEADERS += \
     tableviewwindow.h
 
 FORMS += \
+        NoteWindow.ui \
         gestionL.ui \
         tableviewwindow.ui
 
