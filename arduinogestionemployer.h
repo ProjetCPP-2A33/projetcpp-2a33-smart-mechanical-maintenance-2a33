@@ -1,5 +1,5 @@
-#ifndef ARDUINO_H
-#define ARDUINO_H
+#ifndef ARDUINOGESTIONEMPLOYER_H
+#define ARDUINOGESTIONEMPLOYER_H
 
 #include <QSerialPort>
 #include <QSerialPortInfo>
@@ -23,4 +23,4 @@ private:
     QString lastError;
 };
 
-#endif // ARDUINO_H
+#endif // ARDUINOGESTIONEMPLOYER_H
