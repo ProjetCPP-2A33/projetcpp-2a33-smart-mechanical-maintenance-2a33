@@ -26,7 +26,13 @@ SOURCES += \
     main.cpp \
     mainwindowgestionemployer.cpp \
     rendezvous.cpp \
-    vehicules.cpp
+    vehicules.cpp\
+    NoteWindow.cpp \
+       arduinogestionL.cpp \
+       gestionL.cpp \
+       graphview.cpp \
+       local.cpp \
+       tableviewwindow.cpp
 
 HEADERS += \
     addclient.h \
@@ -37,13 +43,24 @@ HEADERS += \
     employer.h \
     mainwindowgestionemployer.h \
     rendezvous.h \
-    vehicules.h
+    vehicules.h\
+    NoteWindow.h \
+    arduinogestionL.h \
+    gestionL.h \
+    graphview.h \
+    local.h \
+    tableviewwindow.h
 
 FORMS += \
     addclient.ui \
-    mainwindowgestionemployer.ui
+    mainwindowgestionemployer.ui\
+    NoteWindow.ui \
+    gestionL.ui \
+    tableviewwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+RESOURCES += \
+    images.qrc
